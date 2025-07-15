@@ -19,8 +19,10 @@ const ContactForm = () => {
 
     try {
       // ✅ Send form data to live backend
-      const res = await axios.post('https://freelance-backend-55i4.onrender.com/api/contact', formData);
-
+      const res = await axios.post(
+        'https://freelance-backend-55i4.onrender.com/api/contact',
+        formData
+      );
 
       if (res.status === 200 || res.status === 201) {
         alert('✅ Message sent successfully!');
