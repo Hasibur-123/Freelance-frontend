@@ -10,14 +10,16 @@ const AdminDashboard = () => {
   const [replyMsg, setReplyMsg] = useState('');
   const [sending, setSending] = useState(false);
 
+  const API_BASE = 'https://freelance-backend-55i4.onrender.com';
+
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const res = await axios.get('https://freelance-backend-55i4.onrender.com/api/leads');
+        const res = await axios.get(`${API_BASE}/api/leads`);
         setLeads(res.data);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching leads:', err);
+        console.error('❌ Error fetching leads:', err);
         setLoading(false);
       }
     };
@@ -35,7 +37,7 @@ const AdminDashboard = () => {
 
     setSending(true);
     try {
-      await axios.post('https://freelance-backend-55i4.onrender.com/api/reply', {
+      await axios.post(`${API_BASE}/api/reply`, {
         toEmail: selectedEmail,
         subject: 'Reply from Hasibur',
         message: replyMsg
@@ -43,7 +45,7 @@ const AdminDashboard = () => {
       alert('✅ Reply sent successfully');
       setShowModal(false);
     } catch (err) {
-      console.error(err);
+      console.error('❌ Failed to send reply:', err);
       alert('❌ Failed to send reply');
     } finally {
       setSending(false);
