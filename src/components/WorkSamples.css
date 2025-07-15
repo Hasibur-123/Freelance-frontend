@@ -1,0 +1,150 @@
+/* Reset + Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Section Background with Animation */
+.work {
+  min-height: 50vh;
+  padding: 4rem 1rem;
+  background: linear-gradient(-45deg, #f0f8ff, #dbefff, #e0fff9, #f7e8ff);
+  background-size: 400% 400%;
+  animation: bgFlow 15s ease infinite;
+}
+
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading */
+.work-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0a3d62;
+  margin-bottom: 3rem;
+}
+
+/* Carousel for Mobile */
+.work-carousel {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-dots li button:before {
+  color: #2980b9;
+}
+
+.slick-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Work Card Shared Style */
+.work-card {
+  background-color: #ffffffcc;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.work-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.work-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+.work-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.work-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.work-btn:hover {
+  background-color: #219150;
+  transform: scale(1.05);
+}
+
+/* Hover animation for desktop cards */
+.animate-work:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Grid layout for desktop */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-grid {
+    display: none;
+  }
+
+  .work-carousel {
+    display: block;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .work-heading {
+    font-size: 2rem;
+  }
+
+  .work-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .work-card p {
+    font-size: 0.9rem;
+  }
+}

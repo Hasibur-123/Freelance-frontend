@@ -1,0 +1,105 @@
+.services {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb, #80cbc4);
+  background-size: 400% 400%;
+  animation: animateBG 10s ease infinite;
+}
+
+@keyframes animateBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.services-heading {
+  font-size: 36px;
+  color: #004d40;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(220, 23, 23, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(237, 21, 21, 0.15);
+  background-color: #0f0b0b;
+}
+
+.service-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  color: #018878;
+}
+
+.price-tag {
+  background-color: #00796b;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.service-card p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: hsl(152, 68%, 42%);
+}
+
+/* Animation on scroll effect */
+.animate-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-card:nth-child(1) { animation-delay: 0.2s; }
+.animate-card:nth-child(2) { animation-delay: 0.4s; }
+.animate-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-card {
+    width: 100%;
+  }
+
+  .services-heading {
+    font-size: 28px;
+  }
+
+  .price-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
