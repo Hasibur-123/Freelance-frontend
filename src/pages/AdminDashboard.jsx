@@ -10,7 +10,7 @@ const AdminDashboard = () => {
   const [replyMsg, setReplyMsg] = useState('');
   const [sending, setSending] = useState(false);
 
-  const API_BASE = 'https://freelance-backend-55i4.onrender.com';
+  const API_BASE = 'https://freelance-backend-m2kk.onrender.com';
 
   useEffect(() => {
     const fetchLeads = async () => {
